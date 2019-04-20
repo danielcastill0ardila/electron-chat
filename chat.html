@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Online Chat</title>
+</head>
+<body>
+    <div id='welcome'></div>
+
+    <div style="padding:80px;">
+        <div class="card">
+            <h5 class="card-header" id="Test">Chat</h5>
+            <div class="card-body">
+                <ul class="list-group" id="myList">
+                  
+                </ul>
+                
+            </div>
+            <div class="card-footer" style="float:right;">
+                <div style="display:flex;">
+                    <div>
+                        <input type="text" class="form-control" id="message-text" aria-describedby="emailHelp" placeholder="type text">
+                    </div>
+                    <div style="margin-left:10px">
+                        <button type="button" id="message" class="btn btn-outline-success">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    <script>require('./handleChat.js')</script>
+</body>
+</html>
