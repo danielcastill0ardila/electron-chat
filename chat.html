@@ -11,6 +11,7 @@
 <body>
     <div id='welcome'></div>
 
+    
     <div style="padding:80px;">
         <div class="card">
             <h5 class="card-header" id="Test">Chat</h5>
@@ -19,13 +20,8 @@
                   
                 </ul>
                 <div class="my-3 p-3 bg-white rounded shadow-sm" id="chat">
-                <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
-                
-           
-                
-                <small class="d-block text-right mt-3">
-                    <a href="#">All updates</a>
-                </small>
+                <h6 class="border-bottom border-gray pb-2 mb-0">Recent messages</h6>
+         
                 </div>
                 
             </div>
@@ -34,8 +30,13 @@
                     <div>
                         <input type="text" class="form-control" id="message-text" aria-describedby="emailHelp" placeholder="type text">
                     </div>
-                    <div style="margin-left:10px">
-                        <button type="button" id="message" class="btn btn-outline-success">Send Message</button>
+                    <div style="margin-left:10px" style="display:flex;">
+                     
+                            <div><button type="button" id="message" class="btn btn-success">Send Message</button></div>
+                            <div><input type="file" name="myFile" id="file-transfer" ></div>
+                            
+                     
+                       
                     </div>
                 </div>
             </div>
