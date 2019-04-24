@@ -3,8 +3,6 @@ const fs = require('fs');
 const client = new net.Socket();
 client.connect(8080, '192.168.0.18', function() {
 	client.on('data', function(data) {
-		// fs.writeFileSync('hi.png', JSON.parse(JSON.stringify(data)).data);
-		console.log('entr');
 		if (isJson(data.toString())) {
 			let finalData = JSON.parse(data.toString()) || {};
 			let getDom = document.getElementById('chat').innerHTML;
@@ -45,15 +43,22 @@ document.querySelector('#message').addEventListener('click', () => {
 		user,
 		message
 	};
+
 	client.write(JSON.stringify(finalMessage));
+
 	document.getElementById('message-text').value = '';
 });
 
 document.querySelector('#file-transfer').addEventListener('change', () => {
 	try {
 		let file = document.getElementById('file-transfer').files[0];
-		let buffer = fs.readFileSync(file.path);
-		client.write(buffer);
+		if (file.size <= 6300) {
+			let buffer = fs.readFileSync(file.path);
+			client.write(buffer);
+		} else {
+			alert('choose other file');
+		}
+		document.getElementById('file-transfer').value = null;
 	} catch (error) {
 		alert('Please, Try again!');
 	}
